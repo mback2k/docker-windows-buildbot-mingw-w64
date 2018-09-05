@@ -4,8 +4,6 @@ ARG BASE_TAG=latest_1803
 
 FROM mback2k/windows-buildbot-mingw:${BASE_TAG}
 
-USER ContainerAdministrator
-
 SHELL ["powershell", "-command"]
 
 ARG MINGW_W64_X86="https://prdownloads.sourceforge.net/mingw-w64/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/8.1.0/threads-win32/sjlj/i686-8.1.0-release-win32-sjlj-rt_v6-rev0.7z?download"
@@ -26,5 +24,3 @@ RUN Add-Content -Path 'C:\MinGW\msys\1.0\etc\fstab' -Value 'C:/MinGW/mingw-w64/m
 
 ADD scripts/mingw32.sh C:\MinGW\msys\1.0\bin\mingw32.sh
 ADD scripts/mingw64.sh C:\MinGW\msys\1.0\bin\mingw64.sh
-
-USER Buildbot
