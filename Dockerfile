@@ -4,8 +4,6 @@ ARG BASE_TAG=latest_1803
 
 FROM mback2k/windows-buildbot-mingw:${BASE_TAG}
 
-SHELL ["powershell", "-command"]
-
 ARG MINGW_W64_X86="https://prdownloads.sourceforge.net/mingw-w64/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/8.1.0/threads-win32/sjlj/i686-8.1.0-release-win32-sjlj-rt_v6-rev0.7z?download"
 ADD ${MINGW_W64_X86} C:\Windows\Temp\mingw-w64-x86.7z
 
